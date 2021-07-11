@@ -20,7 +20,511 @@ class: center, middle, inverse, title-slide
 ---
 
 
-# Commong soon!
+# Who am I?
+
+---
+class: center, middle
+background-color: #fd9426
+
+&lt;iframe src="https://wall.sli.do/event/ba48cucz" width="900" height="600" style="border:none;"&gt;&lt;/iframe&gt;
+
+---
+class: center, middle
+background-color: #fd9426
+
+&lt;iframe src="https://app.sli.do/event/ba48cucz/live/polls" width="900" height="600" style="border:none;"&gt;&lt;/iframe&gt;
+
+---
+
+# What are we going to do today?
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+class: title-slide-section-red
+background-image: url(https://cdn-images-1.medium.com/max/1600/1*gYQhlM7v6GyRuxaL8JtPIQ.png), url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Markdown-mark.svg/2000px-Markdown-mark.svg.png), url(https://www.rstudio.com/wp-content/uploads/2017/05/rmarkdown.png), url(https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Tab_plus.svg/2000px-Tab_plus.svg.png), url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Kennzeichnung_für_Äquivalenzglied.svg/2000px-Kennzeichnung_für_Äquivalenzglied.svg.png)
+background-position: 5% 60%, 43% 60%, 95% 60%, 27% 60%, 62% 63%
+background-size: 250px, 250px, 375px, 100px, 175px
+
+
+# Communicating/sharing I
+
+---
+
+# What is markdown?
+
+- Markdown is a language used to format text
+
+- Rather than click a button to format (like in word), you use markdown 
+syntax
+
+- Lightweight markup language (like HTML but simple)
+
+- Easy to read and write because it uses simple tags (e.g. #)
+
+--
+
+.pull-left[
+
+```
+# This is a subsection header
+
+This is **bold** text.  
+This is *italic* text. 
+
+- This is 
+- a list
+
+1. This is a 
+2. numbered list
+```
+
+]
+
+--
+
+.pull-right[
+## This is a subsection header
+
+This is **bold** text.  
+This is *italic* text. 
+
+- This is 
+- a list
+
+1. This is a 
+2. numbered list
+]
+
+---
+
+# Exercise I
+
+- Open RStudio
+- File &gt; New file &gt; RMarkdown (then click "ok")
+- Select all (cmd + a) and delete everthing
+- Type "hello world"
+- Click "knit" (You will be asked to save. Save the file to your desktop)
+--
+
+- Try to add the following: 
+  - a section header
+  - bold text
+  - an ordered list
+  - an unordered list
+  - a link to your favorite website
+
+---
+background-image: url(https://learn.r-journalism.com/publishing/rmarkdown/images/rmdfiles.png)
+background-position: 95% 50%
+
+# What is R Markdown?
+
+- An authoring format that combines markdown syntax and R code 
+(R + markdown)
+
+--
+
+- An RMarkdown file consists of 3 components...
+
+  - front matter
+
+  - plain text
+
+  - R code
+
+--
+
+- How does it work?
+
+---
+background-image: url(https://cdn-images-1.medium.com/max/1600/1*gYQhlM7v6GyRuxaL8JtPIQ.png), url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Markdown-mark.svg/2000px-Markdown-mark.svg.png), url(https://www.rstudio.com/wp-content/uploads/2017/05/rmarkdown.png), url(https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Tab_plus.svg/2000px-Tab_plus.svg.png), url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Kennzeichnung_für_Äquivalenzglied.svg/2000px-Kennzeichnung_für_Äquivalenzglied.svg.png), url(https://www.rstudio.com/wp-content/uploads/2014/04/knitr-200x232.png)
+background-position: 5% 30%, 43% 30%, 95% 10%, 27% 30%, 62% 23%, 30% 70%
+background-size: 250px, 250px, 375px, 100px, 175px, 150px
+
+--
+
+.footnote[.big[`knitr` is used to 'knit' r code into the markdown text file]]
+
+---
+
+# What is R Markdown?
+
+- An authoring format that combines markdown syntax and R code 
+(R + markdown)
+
+- An RMarkdown file consists of 3 components...
+
+  - front matter
+
+  - plain text
+
+  - R code
+
+- How does it work?
+
+- **What can it do**? 
+
+---
+
+# Exercise II 
+
+- Open RStudio
+- File &gt; New file &gt; RMarkdown (then click "ok")
+- Take a look at the text. What markup do you see?
+- Click "knit" (You will be asked to save. Save the file to your desktop)
+- What do you see? What section represents the `front matter`? How can you distinguish plain markdown text from r code?
+--
+
+- Create a new `knitr` code chunk, add the following and click `knit`:  
+`x &lt;- 5; 2 * x`
+--
+
+- Create a new `knitr` code chunk and add the following (note: you may have to install the package):  
+
+.pull-left[
+```
+library(tidyverse)
+mtcars %&gt;% 
+  ggplot(aes(x = drat, y = mpg)) + 
+    geom_point() + 
+    geom_smooth()
+```
+]
+
+--
+
+.pull-right[
+&lt;img src="index_files/figure-html/unnamed-chunk-1-1.png" width="504" /&gt;
+]
+
+---
+class: center, middle
+
+# Why use it?
+
+### An RMardown file is a **dynamic document** that is fully reproducible 
+
+### It can be regenerated automatically whenever the R code or data changes
+
+### It allows you to easily share your results
+
+---
+
+class: middle
+background-image: url(./assets/img/rmd_01.png)
+background-size: contain
+background-position: 100% 50%
+
+.pull-left[
+.big[
+RMarkdown allows you to write simple text documents that can be 
+converted to many differnt output formats
+
+- HTML
+- PDF
+- Word
+- HTML5 slides
+- websites/blogs
+- .grey[Beamer]
+- .grey[Tufte handouts]
+- .grey[Books]
+- .grey[dashboards]
+
+]
+]
+
+---
+
+# Exercise III
+
+- Open the github desktop app
+- You should still have the `github_practice` repo
+- Pull in the newest changes (click 'pull')
+- **If you don't have the `github_practice` repo, go to github.com, 
+search for `jvcasillas`, search for the `github_practice` repo, 
+fork it again, and clone it to your desktop**. 
+--
+
+- Open the `rmarkdown_ex` folder and double click "rmarkdown_ex.Rproj"
+--
+
+- Find the "Files" tab in one of the 4 window panes, click on `ex3.Rmd` 
+- Inspect the file, notice the front matter and the code chunks. 
+- Click 'knit'
+--
+
+- Change the front matter from what you see on the left to what you see on 
+the right and click `knit`:  
+
+.pull-left[
+
+```r
+---
+title: "More complex RMardown example"
+author: "Joseph Casillas"
+date: "`r Sys.Date()`"
+output: 
+  html_document: 
+    highlight: kate
+    number_sections: yes
+    theme: spacelab
+    toc: true
+    toc_float:
+      toc_collapsed: true
+---
+```
+]
+
+.pull-right[
+
+```r
+---
+title: "More complex RMardown example"
+author: "Joseph Casillas"
+date: "`r Sys.Date()`"
+output: word_document
+---
+```
+]
+
+---
+background-image: url(https://www.r-project.org/Rlogo.png), url(../assets/img/prohibited.png), url(https://www.mcdwayne.com/wp-content/uploads/2018/05/I-love-markdown-syntax-language.png)
+background-size: 200px, 350px, contain
+background-position: 0% 80%, 66% 26%, 60% 50%
+background-color: #e6e6e6
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class: title-slide-section-grey, middle
+
+# Writing reproducible scientific reports with papaja
+
+---
+
+# papaja
+
+### Overview
+
+- When publishing you have to adhere to the standards of the journal
+
+- This is a pain in the neck
+
+- Journals in Psychology use APA format and accept LaTeX, PDF, word, 
+and other file formats
+
+- Most journals in linguistics accept (require) APA format and usually 
+only .docx (word) files (i.e., SSLA)
+
+- If you ~~hate~~ dislike word this is annoying
+
+---
+
+# papaja
+
+### What is papaja?
+
+- An R package that formats documents (pdf, .docx) in APA format
+- Basically it provides a template and helper functions for academic 
+writing
+- It also provides templates for revision response letters
+
+### Purpose?
+
+- Simplify paper formatting
+- The idea is that you don't have to worry about the little things 
+so you can 'just write'
+- Because it uses RMarkdown you can integrate r code and create 
+reproducible reports
+
+---
+
+# papaja
+
+### Why should I use it?
+
+- Obvious benefits of using RMarkdown (reproducibility, flexibility, integration with github)
+- Fast, easy
+- Pandoc citations
+  1. Create a .bib file with references (more on this later)
+  2. Automatically generate references section in APA format
+- Pre-prints
+
+--
+
+### How does it work?
+
+- Install papaja
+- Open new template
+- Write and knit
+- If you know RMarkdown, you know papaja
+
+---
+class: title-slide-section-grey, middle
+
+# A simple example
+
+---
+background-image: url(./assets/img/papaja_1.png)
+background-size: 400px
+background-position: 99% 50%
+
+# Exercise I 
+
+- If you haven't already, install `papaja`:  
+`remotes::install_github("crsh/papaja")`
+- (Probably not necessary but...) restart RStudio
+--
+
+- Click the new file icon (white square with a green ".green[+]")
+- Select `R Markdown...` &gt; `From template` &gt; `APA article (6th edition)`
+- A template will open automatically. Inspect the file.  
+What is familiar? What is different?
+--
+
+- Save the file in `manuscript` and click "Knit" (probably get an error)
+--
+
+- Look for this section of the YAML front matter...  
+
+```
+documentclass     : "apa6"
+classoption       : "man"
+output            : papaja::apa6_word
+---
+```
+
+- change **papaja::apa6_pdf** to .green[papaja::apa6_word] and knit
+
+--
+
+.pull-left[
+
+- Make changes to the text and re-Knit
+- Add r chunks 
+  1. with simple math (i.e., 2 + 2) 
+  2. with a plot using `ggplot2`
+
+]
+
+--
+
+.pull-right[
+&lt;/br&gt;
+- Open and inspect the .bib file
+- Try to cite it in the text and re-Knit
+
+]
+
+
+---
+class: title-slide-section-grey, middle
+
+# An advanced example
+
+---
+
+# Child and parent documents
+
+- Go to https://github.com/jvcasillas/dpbe_l2_replication
+
+- Inspect the `docs` folder, then the `manuscript` folder
+
+--
+
+- Click on `master.Rmd` and inspect the body of the document. How is it 
+different from what we have already seen?
+
+--
+
+- Go back and open the directory `includes`. Inspect the contents. 
+
+--
+
+- Specifically, navigate to the `sections` directory. Open some of the files. 
+
+--
+
+#### **Take away**: you can use 'child documents' to break up a large manuscript
+
+- the 'parent' or master document calls the child documents
+- the output is the same... a single word/pdf/html document
+- works well with dissertations (each child is a chapter)
+- useful when distractions are an issue
+
+---
+class: title-slide-section-grey, middle
+
+# More about knitr
+
+---
+
+# Exercise II
+
+### knitr
+
+- Go back to the `papaja` document we created before
+- Create knitr code chunks and try the following commands (in different chunks). **Remember** you should always name your chunks!
+
+
+.pull-left[
+Commands
+
+- `echo`: logical (TRUE/FALSE)
+- `eval`: logical (TRUE/FALSE)
+- `results`: character ('hide', 'asis', etc.)
+- figure options
+  - `fig.retina`: numeric (1 or 2)
+  - `fig.width`: numeric
+  - `fig.height`: numeric
+  - `fig.align`: character ('left', 'right', 'center')
+]
+
+--
+&lt;br&gt;&lt;br&gt;
+.pull-right[
+- hide/show code
+- evaluate/ignore code
+- format for code output
+- figure ouptions
+  - normal or hi-def images
+  - figure width in inches
+  - figure height in inches
+  - alignment of figure (most useful in html files)
+]
+
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/remark/0.14.0/remark.min.js"></script>
