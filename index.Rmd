@@ -1,0 +1,23 @@
+---
+title       : "Is Your Code Ready for Publication?"
+subtitle    : "A Practical Guide to R Markdown"
+author      : |
+  Joseph V. Casillas
+date        : |
+  From Proposal to Publication:</br>
+  Pathways to Open Science | 07-16-2021
+output:
+  xaringan::moon_reader:
+    chakra: "https://cdnjs.cloudflare.com/ajax/libs/remark/0.14.0/remark.min.js"
+    css: ["hygge", "rutgers", "rutgers-fonts"]
+    lib_dir: assets
+    self_contained: FALSE
+    nature:
+      beforeInit: ["https://www.jvcasillas.com/ru_xaringan/js/ru_xaringan.js", "https://platform.twitter.com/widgets.js"]
+      highlightStyle: monokai
+      highlightLines: TRUE
+      countIncrementalSlides: FALSE
+      ratio: "16:9"
+---
+
+# Commong soon!
