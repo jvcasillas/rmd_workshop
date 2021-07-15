@@ -116,6 +116,7 @@ background-position: 50% 25%
 # What is markdown?
 
 ---
+class: middle
 
 # What is markdown?
 
@@ -187,50 +188,108 @@ background-position: 110% 50%
 
 # What is&lt;/br&gt;R Markdown?
 
+.footnote[
+Artwork by [@allison_horst](https://github.com/allisonhorst/stats-illustrations)
+]
+
 ---
 background-image: url(https://learn.r-journalism.com/publishing/rmarkdown/images/rmdfiles.png)
 background-position: 95% 50%
 
 # What is R Markdown?
 
-- An authoring format that combines markdown syntax and R code 
-(R + markdown)
+.big[
+
+- An authoring format that combines markdown syntax  
+and R code (R + markdown)
+
+]
 
 --
+
+.big[
 
 - An R Markdown file consists of 3 components...
-
   - front matter
-
   - plain text
-
   - R code
 
+]
+
 --
+
+.big[
 
 - How does it do that?
 
+]
+
 ---
-background-image: url(https://cdn-images-1.medium.com/max/1600/1*gYQhlM7v6GyRuxaL8JtPIQ.png), url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Markdown-mark.svg/2000px-Markdown-mark.svg.png), url(https://www.rstudio.com/wp-content/uploads/2017/05/rmarkdown.png), url(https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Tab_plus.svg/2000px-Tab_plus.svg.png), url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Kennzeichnung_für_Äquivalenzglied.svg/2000px-Kennzeichnung_für_Äquivalenzglied.svg.png), url(https://www.rstudio.com/wp-content/uploads/2014/04/knitr-200x232.png)
-background-position: 5% 30%, 43% 30%, 95% 10%, 27% 30%, 62% 23%, 30% 70%
-background-size: 250px, 250px, 375px, 100px, 175px, 150px
+background-image: url(https://cdn-images-1.medium.com/max/1600/1*gYQhlM7v6GyRuxaL8JtPIQ.png), url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Markdown-mark.svg/2000px-Markdown-mark.svg.png), url(https://www.rstudio.com/wp-content/uploads/2017/05/rmarkdown.png), url(https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Tab_plus.svg/2000px-Tab_plus.svg.png), url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Kennzeichnung_für_Äquivalenzglied.svg/2000px-Kennzeichnung_für_Äquivalenzglied.svg.png), url(http://hexb.in/vector/knitr.svg)
+background-position: 18% 15%, 50% 20%, 88% 8%, 35% 20%, 65% 13%, 50% 85%
+background-size: 200px, 200px, 275px, 100px, 175px, 275px
+
+---
+background-color: #f2f2f2
+background-image: url(./assets/img/how_it_works.png)
+background-size: contain
+
+.big[
+.RUred[`knitr` *knits* text and R code from an Rmd file&lt;br&gt;into an md file]
+]
 
 --
 
-.footnote[.big[`knitr` is used to 'knit' r code into the markdown text file]]
+.footnote[
+.big[
+.blue[`pandoc` converts the md file to a desired output]
+]
+]
 
 ---
-
-# Why should you care? (benefits)
-
-Reproducibility images
+background-image: url(https://raw.githubusercontent.com/jvcasillas/stats-illustrations/master/rstats-artwork/rmarkdown_wizards.png)
+background-size: contain
 
 ---
 class: middle
 
-.pull-left[
+# Why should you care?
+
+---
+background-image: url(https://raw.githubusercontent.com/jvcasillas/stats-illustrations/master/rstats-artwork/reproducibility_court.png)
+background-size: contain
+
+---
+class: center, middle
+
+# Why should you care?
+
+### An RMardown file is a **dynamic document** that is fully reproducible 
+
+--
+
+### It can be regenerated automatically whenever the R code or data changes
+
+--
+
+### It allows you to easily share your results
+
+--
+
+### It allows others to see exactly what you did
+
+---
+class: middle
 
 # But how does it work?
+
+--
+
+.pull-left[
+
+## Let's find out
+
+### But first...
 
 ]
 
@@ -238,18 +297,245 @@ class: middle
 
 .pull-right[
 
-### Installations
+## Installations
 
-You should have...
+### You should have...
 
 - R
 
 - RStudio
 
-- rmarkdown package
+- Some packages
 
-- tidyverse (helpful)
+]
 
+---
+class: middle
+background-image: url(https://github.com/jvcasillas/stats-illustrations/blob/master/rstats-artwork/tidyverse_celestial.png?raw=true)
+background-size: contain
+background-position: 100% 50%
+
+```
+install.packages("rmarkdown")
+install.packages("knitr")
+install.packages("tidyverse")
+install.packages("here")
+install.packages("tinytex")
+```
+
+
+
+---
+
+Exercise I - Getting started
+(template, first knit)
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Anatomy of an Rmd document
+(yaml, text, chunks)
+
+---
+
+Exercise II - From scratch
+(yaml, text, chunks)
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+More about code chunks
+(echo, eval, include)
+
+.pull-left[
+Commands
+
+- `echo`: logical (TRUE/FALSE)
+- `eval`: logical (TRUE/FALSE)
+- `include`: logical (TRUE/FALSE)
+- `results`: character ('hide', 'asis', etc.)
+- figure options
+  - `fig.retina`: numeric (1 or 2)
+  - `fig.width`: numeric
+  - `fig.height`: numeric
+  - `fig.align`: character ('left', 'right', 'center')
+]
+
+---
+
+Exercise III - Play with the output
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+
+In-line code
+(calculator math, objects)
+
+---
+
+Exercise IV - Writing results
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Plots and tables
+(fig chunk options, results="asis")
+
+.pull-left[
+Commands
+
+- .grey[`echo`: logical (TRUE/FALSE)]
+- .grey[`eval`: logical (TRUE/FALSE)]
+- .grey[`include`: logical (TRUE/FALSE)]
+- `results`: character ('hide', 'asis', etc.)
+- figure options
+  - `fig.retina`: numeric (1 or 2)
+  - `fig.width`: numeric
+  - `fig.height`: numeric
+  - `fig.align`: character ('left', 'right', 'center')
+]
+
+---
+background-image: url(https://raw.githubusercontent.com/jvcasillas/stats-illustrations/master/rstats-artwork/presenting_monster.png)
+background-size: contain
+
+---
+
+Exercise V
+(change plot width, retina, automate plots)
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Publishing
+
+- different outputs
+- formatting
+- references
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+Efficiency
+
+- cache
+- saving large objects
+
+---
+
+
+
+
+
+
+
+
+Extra
+
+- html slides
+- websites/blogs
+
+---
+class: middle
+background-image: url(./assets/img/rmd_01.png)
+background-size: contain
+background-position: 100% 50%
+
+.pull-left[
+.big[
+RMarkdown allows you to write simple text documents that can be 
+converted to many differnt output formats
+
+- HTML
+- PDF
+- Word
+- HTML5 slides
+- websites/blogs
+- .grey[Beamer]
+- .grey[Tufte handouts]
+- .grey[Books]
+- .grey[dashboards]
+
+]
 ]
 
 ---
@@ -261,54 +547,12 @@ You should have...
 
 
 
-Exercise I - Getting started
-(template, first knit)
-
-Anatomy of an Rmd document
-(yaml, text, chunks)
-
-Exercise II - From scratch
-(yaml, text, chunks)
-
-More about code chunks
-(echo, eval, include)
-
-Exercise III - Play with the output
-
-In-line code
-(calculator math, objects)
-
-Exercise IV - Writing results
-
-Plots and tables
-(fig chunk options, results="asis")
-
-Exercise V
-(change plot width, retina, automate plots)
-
-
-Publishing
-
-- different outputs
-- formating
-- references
-
-
-Efficiency
-
-- cache
-- saving large objects
-
-Extra
-
-- html slides
-- websites/blogs
-
 Common mistakes
 
 - not restarting session regularly (It worked before and now I get an error)
 (what happens when you knit? new R session &gt; set working directory to location of Rmd file &gt;executes code chunks in order
 
+---
 
 
 More resources
@@ -317,10 +561,48 @@ More resources
 
 
 
+---
+background-image: url(https://raw.githubusercontent.com/jvcasillas/stats-illustrations/master/rstats-artwork/r_rollercoaster.png)
+background-size: contain
+
+---
+background-image: url(https://raw.githubusercontent.com/jvcasillas/stats-illustrations/master/rstats-artwork/r_first_then.png)
+background-size: contain
+
+---
+background-image: url(https://www.r-project.org/Rlogo.png), url(./assets/img/prohibited.png), url(https://www.mcdwayne.com/wp-content/uploads/2018/05/I-love-markdown-syntax-language.png)
+background-size: 200px, 350px, contain
+background-position: 0% 80%, 66% 26%, 60% 60%
+background-color: #e6e6e6
+
+---
+count: false
+class: title-slide-final
+background-image: url(https://github.com/jvcasillas/ru_xaringan/raw/master/img/logo/ru_shield.png), url(https://octodex.github.com/images/spidertocat.png)
+background-size: 70px, 250px
+background-position: 15% 15%, 95% 0%
+
+&lt;br&gt;
+
+# Thank you!
+
+&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+.Large[
+
+|                                     |                                         |
+| ----------------------------------: | :-------------------------------------- |
+| <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:red;overflow:visible;position:relative;"><path d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"/></svg> | .lightgrey[joseph.casillas@rutgers.edu] |
+| <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:red;overflow:visible;position:relative;"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>     | .lightgrey[@jvcasill]                   |
+| <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:red;overflow:visible;position:relative;"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg>        | .lightgrey[https://github.com/jvcasillas/rmd_workshop] |
+| <svg aria-hidden="true" role="img" viewBox="0 0 512 512" style="height:1em;width:1em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:red;overflow:visible;position:relative;"><path d="M326.612 185.391c59.747 59.809 58.927 155.698.36 214.59-.11.12-.24.25-.36.37l-67.2 67.2c-59.27 59.27-155.699 59.262-214.96 0-59.27-59.26-59.27-155.7 0-214.96l37.106-37.106c9.84-9.84 26.786-3.3 27.294 10.606.648 17.722 3.826 35.527 9.69 52.721 1.986 5.822.567 12.262-3.783 16.612l-13.087 13.087c-28.026 28.026-28.905 73.66-1.155 101.96 28.024 28.579 74.086 28.749 102.325.51l67.2-67.19c28.191-28.191 28.073-73.757 0-101.83-3.701-3.694-7.429-6.564-10.341-8.569a16.037 16.037 0 0 1-6.947-12.606c-.396-10.567 3.348-21.456 11.698-29.806l21.054-21.055c5.521-5.521 14.182-6.199 20.584-1.731a152.482 152.482 0 0 1 20.522 17.197zM467.547 44.449c-59.261-59.262-155.69-59.27-214.96 0l-67.2 67.2c-.12.12-.25.25-.36.37-58.566 58.892-59.387 154.781.36 214.59a152.454 152.454 0 0 0 20.521 17.196c6.402 4.468 15.064 3.789 20.584-1.731l21.054-21.055c8.35-8.35 12.094-19.239 11.698-29.806a16.037 16.037 0 0 0-6.947-12.606c-2.912-2.005-6.64-4.875-10.341-8.569-28.073-28.073-28.191-73.639 0-101.83l67.2-67.19c28.239-28.239 74.3-28.069 102.325.51 27.75 28.3 26.872 73.934-1.155 101.96l-13.087 13.087c-4.35 4.35-5.769 10.79-3.783 16.612 5.864 17.194 9.042 34.999 9.69 52.721.509 13.906 17.454 20.446 27.294 10.606l37.106-37.106c59.271-59.259 59.271-155.699.001-214.959z"/></svg>        | .lightgrey[https://www.jvcasillas.com/rmd_workshop/index.html] |
 
 
+]
 
+.left[.footnote[.large[Hint: continue for more tips, tricks, and exercises!]]]
 
+---
 
 
 
@@ -390,42 +672,6 @@ mtcars %&gt;%
 ]
 
 ---
-class: center, middle
-
-# Why use it?
-
-### An RMardown file is a **dynamic document** that is fully reproducible 
-
-### It can be regenerated automatically whenever the R code or data changes
-
-### It allows you to easily share your results
-
----
-
-class: middle
-background-image: url(./assets/img/rmd_01.png)
-background-size: contain
-background-position: 100% 50%
-
-.pull-left[
-.big[
-RMarkdown allows you to write simple text documents that can be 
-converted to many differnt output formats
-
-- HTML
-- PDF
-- Word
-- HTML5 slides
-- websites/blogs
-- .grey[Beamer]
-- .grey[Tufte handouts]
-- .grey[Books]
-- .grey[dashboards]
-
-]
-]
-
----
 
 # Exercise III
 
@@ -478,12 +724,6 @@ output: word_document
 ---
 ```
 ]
-
----
-background-image: url(https://www.r-project.org/Rlogo.png), url(../assets/img/prohibited.png), url(https://www.mcdwayne.com/wp-content/uploads/2018/05/I-love-markdown-syntax-language.png)
-background-size: 200px, 350px, contain
-background-position: 0% 80%, 66% 26%, 60% 50%
-background-color: #e6e6e6
 
 ---
 
@@ -667,11 +907,6 @@ different from what we have already seen?
 - useful when distractions are an issue
 
 ---
-class: title-slide-section-grey, middle
-
-# More about knitr
-
----
 
 # Exercise II
 
@@ -707,45 +942,11 @@ Commands
   - alignment of figure (most useful in html files)
 ]
 
-
----
-background-image: url(https://raw.githubusercontent.com/jvcasillas/stats-illustrations/master/rstats-artwork/r_first_then.png)
-background-size: contain
-
----
-background-image: url(https://raw.githubusercontent.com/jvcasillas/stats-illustrations/master/rstats-artwork/rmarkdown_wizards.png)
-background-size: contain
-
----
-background-image: url(https://raw.githubusercontent.com/jvcasillas/stats-illustrations/master/rstats-artwork/reproducibility_court.png)
-background-size: contain
-
----
-background-image: url(https://github.com/jvcasillas/stats-illustrations/blob/master/rstats-artwork/tidyverse_celestial.png?raw=true)
-background-size: contain
-
----
-background-image: url(https://raw.githubusercontent.com/jvcasillas/stats-illustrations/master/rstats-artwork/r_rollercoaster.png)
-background-size: contain
-
-
----
-background-image: url(https://raw.githubusercontent.com/jvcasillas/stats-illustrations/master/rstats-artwork/presenting_monster.png)
-background-size: contain
-
-
-
-.footnote[
-Artwork by [@allison_horst](https://github.com/allisonhorst/stats-illustrations)
-]
-
-
-
 &lt;style&gt;
 .title-slide {
   background-image: url(https://github.com/jvcasillas/ru_xaringan/raw/master/img/logo/ru_shield.png), url(https://raw.githubusercontent.com/jvcasillas/stats-illustrations/master/rstats-artwork/rainbowr.gif);
   background-position: 9% 15%, 90% 15%;
-  background-size: 55px, 105px;
+  background-size: 55px, 125px;
   background-color: #fff;
   padding-left: 100px;  /* delete this for 4:3 aspect ratio */
 }

@@ -118,6 +118,7 @@ background-position: 50% 25%
 # What is markdown?
 
 ---
+class: middle
 
 # What is markdown?
 
@@ -189,50 +190,108 @@ background-position: 110% 50%
 
 # What is</br>R Markdown?
 
+.footnote[
+Artwork by [@allison_horst](https://github.com/allisonhorst/stats-illustrations)
+]
+
 ---
 background-image: url(https://learn.r-journalism.com/publishing/rmarkdown/images/rmdfiles.png)
 background-position: 95% 50%
 
 # What is R Markdown?
 
-- An authoring format that combines markdown syntax and R code 
-(R + markdown)
+.big[
+
+- An authoring format that combines markdown syntax  
+and R code (R + markdown)
+
+]
 
 --
+
+.big[
 
 - An R Markdown file consists of 3 components...
-
   - front matter
-
   - plain text
-
   - R code
 
+]
+
 --
+
+.big[
 
 - How does it do that?
 
+]
+
 ---
-background-image: url(https://cdn-images-1.medium.com/max/1600/1*gYQhlM7v6GyRuxaL8JtPIQ.png), url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Markdown-mark.svg/2000px-Markdown-mark.svg.png), url(https://www.rstudio.com/wp-content/uploads/2017/05/rmarkdown.png), url(https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Tab_plus.svg/2000px-Tab_plus.svg.png), url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Kennzeichnung_für_Äquivalenzglied.svg/2000px-Kennzeichnung_für_Äquivalenzglied.svg.png), url(https://www.rstudio.com/wp-content/uploads/2014/04/knitr-200x232.png)
-background-position: 5% 30%, 43% 30%, 95% 10%, 27% 30%, 62% 23%, 30% 70%
-background-size: 250px, 250px, 375px, 100px, 175px, 150px
+background-image: url(https://cdn-images-1.medium.com/max/1600/1*gYQhlM7v6GyRuxaL8JtPIQ.png), url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Markdown-mark.svg/2000px-Markdown-mark.svg.png), url(https://www.rstudio.com/wp-content/uploads/2017/05/rmarkdown.png), url(https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Tab_plus.svg/2000px-Tab_plus.svg.png), url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Kennzeichnung_für_Äquivalenzglied.svg/2000px-Kennzeichnung_für_Äquivalenzglied.svg.png), url(http://hexb.in/vector/knitr.svg)
+background-position: 18% 15%, 50% 20%, 88% 8%, 35% 20%, 65% 13%, 50% 85%
+background-size: 200px, 200px, 275px, 100px, 175px, 275px
+
+---
+background-color: #f2f2f2
+background-image: url(./assets/img/how_it_works.png)
+background-size: contain
+
+.big[
+.RUred[`knitr` *knits* text and R code from an Rmd file<br>into an md file]
+]
 
 --
 
-.footnote[.big[`knitr` is used to 'knit' r code into the markdown text file]]
+.footnote[
+.big[
+.blue[`pandoc` converts the md file to a desired output]
+]
+]
 
 ---
-
-# Why should you care? (benefits)
-
-Reproducibility images
+background-image: url(https://raw.githubusercontent.com/jvcasillas/stats-illustrations/master/rstats-artwork/rmarkdown_wizards.png)
+background-size: contain
 
 ---
 class: middle
 
-.pull-left[
+# Why should you care?
+
+---
+background-image: url(https://raw.githubusercontent.com/jvcasillas/stats-illustrations/master/rstats-artwork/reproducibility_court.png)
+background-size: contain
+
+---
+class: center, middle
+
+# Why should you care?
+
+### An RMardown file is a **dynamic document** that is fully reproducible 
+
+--
+
+### It can be regenerated automatically whenever the R code or data changes
+
+--
+
+### It allows you to easily share your results
+
+--
+
+### It allows others to see exactly what you did
+
+---
+class: middle
 
 # But how does it work?
+
+--
+
+.pull-left[
+
+## Let's find out
+
+### But first...
 
 ]
 
@@ -240,18 +299,245 @@ class: middle
 
 .pull-right[
 
-### Installations
+## Installations
 
-You should have...
+### You should have...
 
 - R
 
 - RStudio
 
-- rmarkdown package
+- Some packages
 
-- tidyverse (helpful)
+]
 
+---
+class: middle
+background-image: url(https://github.com/jvcasillas/stats-illustrations/blob/master/rstats-artwork/tidyverse_celestial.png?raw=true)
+background-size: contain
+background-position: 100% 50%
+
+```
+install.packages("rmarkdown")
+install.packages("knitr")
+install.packages("tidyverse")
+install.packages("here")
+install.packages("tinytex")
+```
+
+
+
+---
+
+Exercise I - Getting started
+(template, first knit)
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Anatomy of an Rmd document
+(yaml, text, chunks)
+
+---
+
+Exercise II - From scratch
+(yaml, text, chunks)
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+More about code chunks
+(echo, eval, include)
+
+.pull-left[
+Commands
+
+- `echo`: logical (TRUE/FALSE)
+- `eval`: logical (TRUE/FALSE)
+- `include`: logical (TRUE/FALSE)
+- `results`: character ('hide', 'asis', etc.)
+- figure options
+  - `fig.retina`: numeric (1 or 2)
+  - `fig.width`: numeric
+  - `fig.height`: numeric
+  - `fig.align`: character ('left', 'right', 'center')
+]
+
+---
+
+Exercise III - Play with the output
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+---
+
+In-line code
+(calculator math, objects)
+
+---
+
+Exercise IV - Writing results
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Plots and tables
+(fig chunk options, results="asis")
+
+.pull-left[
+Commands
+
+- .grey[`echo`: logical (TRUE/FALSE)]
+- .grey[`eval`: logical (TRUE/FALSE)]
+- .grey[`include`: logical (TRUE/FALSE)]
+- `results`: character ('hide', 'asis', etc.)
+- figure options
+  - `fig.retina`: numeric (1 or 2)
+  - `fig.width`: numeric
+  - `fig.height`: numeric
+  - `fig.align`: character ('left', 'right', 'center')
+]
+
+---
+background-image: url(https://raw.githubusercontent.com/jvcasillas/stats-illustrations/master/rstats-artwork/presenting_monster.png)
+background-size: contain
+
+---
+
+Exercise V
+(change plot width, retina, automate plots)
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Publishing
+
+- different outputs
+- formatting
+- references
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+Efficiency
+
+- cache
+- saving large objects
+
+---
+
+
+
+
+
+
+
+
+Extra
+
+- html slides
+- websites/blogs
+
+---
+class: middle
+background-image: url(./assets/img/rmd_01.png)
+background-size: contain
+background-position: 100% 50%
+
+.pull-left[
+.big[
+RMarkdown allows you to write simple text documents that can be 
+converted to many differnt output formats
+
+- HTML
+- PDF
+- Word
+- HTML5 slides
+- websites/blogs
+- .grey[Beamer]
+- .grey[Tufte handouts]
+- .grey[Books]
+- .grey[dashboards]
+
+]
 ]
 
 ---
@@ -263,54 +549,12 @@ You should have...
 
 
 
-Exercise I - Getting started
-(template, first knit)
-
-Anatomy of an Rmd document
-(yaml, text, chunks)
-
-Exercise II - From scratch
-(yaml, text, chunks)
-
-More about code chunks
-(echo, eval, include)
-
-Exercise III - Play with the output
-
-In-line code
-(calculator math, objects)
-
-Exercise IV - Writing results
-
-Plots and tables
-(fig chunk options, results="asis")
-
-Exercise V
-(change plot width, retina, automate plots)
-
-
-Publishing
-
-- different outputs
-- formating
-- references
-
-
-Efficiency
-
-- cache
-- saving large objects
-
-Extra
-
-- html slides
-- websites/blogs
-
 Common mistakes
 
 - not restarting session regularly (It worked before and now I get an error)
 (what happens when you knit? new R session > set working directory to location of Rmd file >executes code chunks in order
 
+---
 
 
 More resources
@@ -319,10 +563,48 @@ More resources
 
 
 
+---
+background-image: url(https://raw.githubusercontent.com/jvcasillas/stats-illustrations/master/rstats-artwork/r_rollercoaster.png)
+background-size: contain
+
+---
+background-image: url(https://raw.githubusercontent.com/jvcasillas/stats-illustrations/master/rstats-artwork/r_first_then.png)
+background-size: contain
+
+---
+background-image: url(https://www.r-project.org/Rlogo.png), url(./assets/img/prohibited.png), url(https://www.mcdwayne.com/wp-content/uploads/2018/05/I-love-markdown-syntax-language.png)
+background-size: 200px, 350px, contain
+background-position: 0% 80%, 66% 26%, 60% 60%
+background-color: #e6e6e6
+
+---
+count: false
+class: title-slide-final
+background-image: url(https://github.com/jvcasillas/ru_xaringan/raw/master/img/logo/ru_shield.png), url(https://octodex.github.com/images/spidertocat.png)
+background-size: 70px, 250px
+background-position: 15% 15%, 95% 0%
+
+<br>
+
+# Thank you!
+
+<br><br><br><br><br>
+
+.Large[
+
+|                                     |                                         |
+| ----------------------------------: | :-------------------------------------- |
+| `r fa("paper-plane", fill = "red")` | .lightgrey[joseph.casillas@rutgers.edu] |
+| `r fa("twitter", fill = "red")`     | .lightgrey[@jvcasill]                   |
+| `r fa("link", fill = "red")`        | .lightgrey[https://github.com/jvcasillas/rmd_workshop] |
+| `r fa("link", fill = "red")`        | .lightgrey[https://www.jvcasillas.com/rmd_workshop/index.html] |
 
 
+]
 
+.left[.footnote[.large[Hint: continue for more tips, tricks, and exercises!]]]
 
+---
 
 
 
@@ -398,42 +680,6 @@ mtcars %>%
 ]
 
 ---
-class: center, middle
-
-# Why use it?
-
-### An RMardown file is a **dynamic document** that is fully reproducible 
-
-### It can be regenerated automatically whenever the R code or data changes
-
-### It allows you to easily share your results
-
----
-
-class: middle
-background-image: url(./assets/img/rmd_01.png)
-background-size: contain
-background-position: 100% 50%
-
-.pull-left[
-.big[
-RMarkdown allows you to write simple text documents that can be 
-converted to many differnt output formats
-
-- HTML
-- PDF
-- Word
-- HTML5 slides
-- websites/blogs
-- .grey[Beamer]
-- .grey[Tufte handouts]
-- .grey[Books]
-- .grey[dashboards]
-
-]
-]
-
----
 
 # Exercise III
 
@@ -484,12 +730,6 @@ output: word_document
 ---
 ```
 ]
-
----
-background-image: url(https://www.r-project.org/Rlogo.png), url(../assets/img/prohibited.png), url(https://www.mcdwayne.com/wp-content/uploads/2018/05/I-love-markdown-syntax-language.png)
-background-size: 200px, 350px, contain
-background-position: 0% 80%, 66% 26%, 60% 50%
-background-color: #e6e6e6
 
 ---
 
@@ -673,11 +913,6 @@ different from what we have already seen?
 - useful when distractions are an issue
 
 ---
-class: title-slide-section-grey, middle
-
-# More about knitr
-
----
 
 # Exercise II
 
@@ -713,45 +948,11 @@ Commands
   - alignment of figure (most useful in html files)
 ]
 
-
----
-background-image: url(https://raw.githubusercontent.com/jvcasillas/stats-illustrations/master/rstats-artwork/r_first_then.png)
-background-size: contain
-
----
-background-image: url(https://raw.githubusercontent.com/jvcasillas/stats-illustrations/master/rstats-artwork/rmarkdown_wizards.png)
-background-size: contain
-
----
-background-image: url(https://raw.githubusercontent.com/jvcasillas/stats-illustrations/master/rstats-artwork/reproducibility_court.png)
-background-size: contain
-
----
-background-image: url(https://github.com/jvcasillas/stats-illustrations/blob/master/rstats-artwork/tidyverse_celestial.png?raw=true)
-background-size: contain
-
----
-background-image: url(https://raw.githubusercontent.com/jvcasillas/stats-illustrations/master/rstats-artwork/r_rollercoaster.png)
-background-size: contain
-
-
----
-background-image: url(https://raw.githubusercontent.com/jvcasillas/stats-illustrations/master/rstats-artwork/presenting_monster.png)
-background-size: contain
-
-
-
-.footnote[
-Artwork by [@allison_horst](https://github.com/allisonhorst/stats-illustrations)
-]
-
-
-
 <style>
 .title-slide {
   background-image: url(https://github.com/jvcasillas/ru_xaringan/raw/master/img/logo/ru_shield.png), url(https://raw.githubusercontent.com/jvcasillas/stats-illustrations/master/rstats-artwork/rainbowr.gif);
   background-position: 9% 15%, 90% 15%;
-  background-size: 55px, 105px;
+  background-size: 55px, 125px;
   background-color: #fff;
   padding-left: 100px;  /* delete this for 4:3 aspect ratio */
 }
