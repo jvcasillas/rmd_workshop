@@ -20,25 +20,65 @@ output:
       ratio: "16:9"
 ---
 
-# Who am I?
+
+```{r, setup, include=F}
+library("fontawesome")
+```
+
+class: middle
+
+# Hi! 👋🏼
+
+.Large[
+
+|                                     |                                         |
+| ----------------------------------: | :-------------------------------------- |
+| `r fa("paper-plane", fill = "red")` | joseph.casillas@rutgers.edu |
+| `r fa("twitter", fill = "red")`     | [@jvcasill](https://twitter.com/jvcasill) |
+| `r fa("link", fill = "red")`        | https://github.com/jvcasillas/rmd_workshop |
+| `r fa("link", fill = "red")`        | https://www.jvcasillas.com/rmd_workshop/index.html |
+
+]
 
 ---
+exclude: true
 class: center, middle
 background-color: #fd9426
 
-<iframe src="https://wall.sli.do/event/ba48cucz" width="900" height="600" style="border:none;"></iframe>
+<iframe src="https://wall.sli.do/event/ba48cucz" width="1000" height="600" style="border:none;"></iframe>
 
 ---
-class: center, middle
-background-color: #fd9426
+class: middle, center
 
-<iframe src="https://app.sli.do/event/ba48cucz/live/polls" width="900" height="600" style="border:none;"></iframe>
+## About that title...
+
+--
+
+# .grey[Is your code ready for publication?]
+
+--
+
+.huge[.RUred[Yes!]]
 
 ---
+class: middle
 
 # What are we going to do today?
 
+--
+
+.Large[
+
+1. What is RMarkdown and why should I use it?
+
+2. Hands on examples
+
+]
+
 ---
+
+
+
 
 
 
@@ -56,12 +96,32 @@ background-image: url(https://cdn-images-1.medium.com/max/1600/1*gYQhlM7v6GyRuxa
 background-position: 5% 60%, 43% 60%, 95% 60%, 27% 60%, 62% 63%
 background-size: 250px, 250px, 375px, 100px, 175px
 
+# Let's go!
 
-# Communicating/sharing I
+---
+class: middle, center
+background-image: url(https://raw.githubusercontent.com/jvcasillas/stats-illustrations/master/rstats-artwork/exploder.gif)
+background-size: 200px
+background-position: 50% 75%
+
+# What is R?
+
+---
+class: middle, center
+background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Markdown-mark.svg/2000px-Markdown-mark.svg.png)
+background-size: 500px
+background-position: 50% 25%
+
+<br><br><br>  
+<br><br><br>  
+<br><br><br>
+# What is markdown?
 
 ---
 
 # What is markdown?
+
+.big[
 
 - Markdown is a language used to format text
 
@@ -72,12 +132,20 @@ syntax
 
 - Easy to read and write because it uses simple tags (e.g. #)
 
---
+]
+
+---
 
 .pull-left[
 
+# Raw markdown
+
+<br><br><br><br>
+
+.big[
+
 ```
-# This is a subsection header
+# This is a section header
 
 This is **bold** text.  
 This is *italic* text. 
@@ -88,23 +156,189 @@ This is *italic* text.
 1. This is a 
 2. numbered list
 ```
+
+]
+]
+
+--
+
+.pull-right[
+
+# Rendered markdown
+
+<br><br>
+
+## This is a section header
+
+This is **.black[bold]** text.  
+This is *italic* text. 
+
+- This is 
+- a list
+
+1. This is a 
+2. numbered list
+
+]
+
+---
+class: middle
+background-image: url(https://raw.githubusercontent.com/jvcasillas/stats-illustrations/master/rstats-artwork/rmarkdown_rockstar.png)
+background-size: contain
+background-position: 110% 50%
+
+# What is</br>R Markdown?
+
+---
+background-image: url(https://learn.r-journalism.com/publishing/rmarkdown/images/rmdfiles.png)
+background-position: 95% 50%
+
+# What is R Markdown?
+
+- An authoring format that combines markdown syntax and R code 
+(R + markdown)
+
+--
+
+- An R Markdown file consists of 3 components...
+
+  - front matter
+
+  - plain text
+
+  - R code
+
+--
+
+- How does it do that?
+
+---
+background-image: url(https://cdn-images-1.medium.com/max/1600/1*gYQhlM7v6GyRuxaL8JtPIQ.png), url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Markdown-mark.svg/2000px-Markdown-mark.svg.png), url(https://www.rstudio.com/wp-content/uploads/2017/05/rmarkdown.png), url(https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Tab_plus.svg/2000px-Tab_plus.svg.png), url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Kennzeichnung_für_Äquivalenzglied.svg/2000px-Kennzeichnung_für_Äquivalenzglied.svg.png), url(https://www.rstudio.com/wp-content/uploads/2014/04/knitr-200x232.png)
+background-position: 5% 30%, 43% 30%, 95% 10%, 27% 30%, 62% 23%, 30% 70%
+background-size: 250px, 250px, 375px, 100px, 175px, 150px
+
+--
+
+.footnote[.big[`knitr` is used to 'knit' r code into the markdown text file]]
+
+---
+
+# Why should you care? (benefits)
+
+Reproducibility images
+
+---
+class: middle
+
+.pull-left[
+
+# But how does it work?
 
 ]
 
 --
 
 .pull-right[
-## This is a subsection header
 
-This is **bold** text.  
-This is *italic* text. 
+### Installations
 
-- This is 
-- a list
+You should have...
 
-1. This is a 
-2. numbered list
+- R
+
+- RStudio
+
+- rmarkdown package
+
+- tidyverse (helpful)
+
 ]
+
+---
+
+
+
+
+
+
+
+
+Exercise I - Getting started
+(template, first knit)
+
+Anatomy of an Rmd document
+(yaml, text, chunks)
+
+Exercise II - From scratch
+(yaml, text, chunks)
+
+More about code chunks
+(echo, eval, include)
+
+Exercise III - Play with the output
+
+In-line code
+(calculator math, objects)
+
+Exercise IV - Writing results
+
+Plots and tables
+(fig chunk options, results="asis")
+
+Exercise V
+(change plot width, retina, automate plots)
+
+
+Publishing
+
+- different outputs
+- formating
+- references
+
+
+Efficiency
+
+- cache
+- saving large objects
+
+Extra
+
+- html slides
+- websites/blogs
+
+Common mistakes
+
+- not restarting session regularly (It worked before and now I get an error)
+(what happens when you knit? new R session > set working directory to location of Rmd file >executes code chunks in order
+
+
+
+More resources
+
+- Links
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ---
 
@@ -123,57 +357,6 @@ This is *italic* text.
   - an ordered list
   - an unordered list
   - a link to your favorite website
-
----
-background-image: url(https://learn.r-journalism.com/publishing/rmarkdown/images/rmdfiles.png)
-background-position: 95% 50%
-
-# What is R Markdown?
-
-- An authoring format that combines markdown syntax and R code 
-(R + markdown)
-
---
-
-- An RMarkdown file consists of 3 components...
-
-  - front matter
-
-  - plain text
-
-  - R code
-
---
-
-- How does it work?
-
----
-background-image: url(https://cdn-images-1.medium.com/max/1600/1*gYQhlM7v6GyRuxaL8JtPIQ.png), url(https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Markdown-mark.svg/2000px-Markdown-mark.svg.png), url(https://www.rstudio.com/wp-content/uploads/2017/05/rmarkdown.png), url(https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Tab_plus.svg/2000px-Tab_plus.svg.png), url(https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Kennzeichnung_für_Äquivalenzglied.svg/2000px-Kennzeichnung_für_Äquivalenzglied.svg.png), url(https://www.rstudio.com/wp-content/uploads/2014/04/knitr-200x232.png)
-background-position: 5% 30%, 43% 30%, 95% 10%, 27% 30%, 62% 23%, 30% 70%
-background-size: 250px, 250px, 375px, 100px, 175px, 150px
-
---
-
-.footnote[.big[`knitr` is used to 'knit' r code into the markdown text file]]
-
----
-
-# What is R Markdown?
-
-- An authoring format that combines markdown syntax and R code 
-(R + markdown)
-
-- An RMarkdown file consists of 3 components...
-
-  - front matter
-
-  - plain text
-
-  - R code
-
-- How does it work?
-
-- **What can it do**? 
 
 ---
 
@@ -308,6 +491,7 @@ background-size: 200px, 350px, contain
 background-position: 0% 80%, 66% 26%, 60% 50%
 background-color: #e6e6e6
 
+---
 
 
 
@@ -529,3 +713,51 @@ Commands
   - alignment of figure (most useful in html files)
 ]
 
+
+---
+background-image: url(https://raw.githubusercontent.com/jvcasillas/stats-illustrations/master/rstats-artwork/r_first_then.png)
+background-size: contain
+
+---
+background-image: url(https://raw.githubusercontent.com/jvcasillas/stats-illustrations/master/rstats-artwork/rmarkdown_wizards.png)
+background-size: contain
+
+---
+background-image: url(https://raw.githubusercontent.com/jvcasillas/stats-illustrations/master/rstats-artwork/reproducibility_court.png)
+background-size: contain
+
+---
+background-image: url(https://github.com/jvcasillas/stats-illustrations/blob/master/rstats-artwork/tidyverse_celestial.png?raw=true)
+background-size: contain
+
+---
+background-image: url(https://raw.githubusercontent.com/jvcasillas/stats-illustrations/master/rstats-artwork/r_rollercoaster.png)
+background-size: contain
+
+
+---
+background-image: url(https://raw.githubusercontent.com/jvcasillas/stats-illustrations/master/rstats-artwork/presenting_monster.png)
+background-size: contain
+
+
+
+.footnote[
+Artwork by [@allison_horst](https://github.com/allisonhorst/stats-illustrations)
+]
+
+
+
+<style>
+.title-slide {
+  background-image: url(https://github.com/jvcasillas/ru_xaringan/raw/master/img/logo/ru_shield.png), url(https://raw.githubusercontent.com/jvcasillas/stats-illustrations/master/rstats-artwork/rainbowr.gif);
+  background-position: 9% 15%, 90% 15%;
+  background-size: 55px, 105px;
+  background-color: #fff;
+  padding-left: 100px;  /* delete this for 4:3 aspect ratio */
+}
+
+.huge {
+  font-size: 2.5em;
+}
+
+</style>
