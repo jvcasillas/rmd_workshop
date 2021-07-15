@@ -42,6 +42,7 @@ class: middle
 
 ---
 exclude: true
+count: false
 class: center, middle
 background-color: #fd9426
 
@@ -303,11 +304,11 @@ class: middle
 
 ### You should have...
 
-- R
+- R `r emo::ji("check")`
 
-- RStudio
+- RStudio `r emo::ji("check")`
 
-- Some packages
+- Some packages `r emo::ji("question")`
 
 ]
 
@@ -325,12 +326,80 @@ install.packages("here")
 install.packages("tinytex")
 ```
 
-
-
 ---
+class: title-slide-section-red, middle
+background-image: url(https://raw.githubusercontent.com/jvcasillas/stats-illustrations/master/rstats-artwork/rainbowr.gif)
+background-position: 85% 50%
+background-size: 200px
 
-Exercise I - Getting started
+# Exercise I - Getting started
+
+<!--
 (template, first knit)
+-->
+
+---
+count: false
+background-image: url(./assets/img/new_rmd.gif)
+background-size: 800px
+background-position: 50% 50%
+
+# Exercise I - Getting started
+
+---
+
+# Exercise I - Getting started
+
+.large[
+- Open RStudio
+- File > New file > RMarkdown (then click "ok")
+- Select all (cmd + a) and delete everything
+- Type "hello world"
+- Click "knit" (You will be asked to save. Save the file to your desktop)
+- Add the following: 
+  - a section header
+  - bold text
+  - an ordered list
+  - an unordered list
+  - a link to your favorite website
+]
+
+---
+
+# Exercise I - Getting started
+
+### Key ideas
+
+- R Markdown files are just text files that end with **.Rmd**
+
+- **YAML** <underline>front matter</underline> is where we set things up, i.e., `output: html_document`
+
+- Markdown syntax!
+
+- Code chunks: 
+
+````
+```{r}`r ''`
+
+# R code here
+2 + 2
+
+```
+````
+
+- **knit** the Rmd file to get a specific output
+
+---
+exclude: true
+count: false
+class: center, middle
+background-color: #fd9426
+
+<iframe src="https://wall.sli.do/event/ba48cucz" width="1000" height="600" style="border:none;"></iframe>
+
+---
+background-image: url(https://raw.githubusercontent.com/jvcasillas/stats-illustrations/master/rstats-artwork/r_first_then.png)
+background-size: contain
 
 ---
 
@@ -344,13 +413,16 @@ Exercise I - Getting started
 
 
 
+class: title-slide-section-red, middle
+background-image: url(https://coda.newjobs.com/api/imagesproxy/ms/cms/content30/images/greys-anatomy.jpg)
+background-size: 300px
+background-position: 95% 50%
 
+# Anatomy of an Rmd document
 
-
-
-
-Anatomy of an Rmd document
+<!--
 (yaml, text, chunks)
+-->
 
 ---
 
@@ -434,28 +506,36 @@ Exercise IV - Writing results
 
 
 
+---
+background-image: url(https://raw.githubusercontent.com/jvcasillas/stats-illustrations/master/rstats-artwork/presenting_monster.png)
+background-size: contain
+background-position: 50% 50%
 
+---
+background-image: url(https://raw.githubusercontent.com/tidyverse/ggplot2/master/man/figures/logo.png)
+background-size: 225px
+background-position: 95% 15%
 
-Plots and tables
+# Plots and tables
+
+<!--
 (fig chunk options, results="asis")
+-->
 
-.pull-left[
-Commands
+### Important chunk options
 
-- .grey[`echo`: logical (TRUE/FALSE)]
-- .grey[`eval`: logical (TRUE/FALSE)]
-- .grey[`include`: logical (TRUE/FALSE)]
+.big[
+- .lightgrey[`echo`: logical (TRUE/FALSE)]
+- .lightgrey[`eval`: logical (TRUE/FALSE)]
+- .lightgrey[`include`: logical (TRUE/FALSE)]
 - `results`: character ('hide', 'asis', etc.)
 - figure options
   - `fig.retina`: numeric (1 or 2)
   - `fig.width`: numeric
   - `fig.height`: numeric
   - `fig.align`: character ('left', 'right', 'center')
-]
 
----
-background-image: url(https://raw.githubusercontent.com/jvcasillas/stats-illustrations/master/rstats-artwork/presenting_monster.png)
-background-size: contain
+]
 
 ---
 
@@ -568,10 +648,6 @@ background-image: url(https://raw.githubusercontent.com/jvcasillas/stats-illustr
 background-size: contain
 
 ---
-background-image: url(https://raw.githubusercontent.com/jvcasillas/stats-illustrations/master/rstats-artwork/r_first_then.png)
-background-size: contain
-
----
 background-image: url(https://www.r-project.org/Rlogo.png), url(./assets/img/prohibited.png), url(https://www.mcdwayne.com/wp-content/uploads/2018/05/I-love-markdown-syntax-language.png)
 background-size: 200px, 350px, contain
 background-position: 0% 80%, 66% 26%, 60% 60%
@@ -580,8 +656,8 @@ background-color: #e6e6e6
 ---
 count: false
 class: title-slide-final
-background-image: url(https://github.com/jvcasillas/ru_xaringan/raw/master/img/logo/ru_shield.png), url(https://octodex.github.com/images/spidertocat.png)
-background-size: 70px, 250px
+background-image: url(https://github.com/jvcasillas/ru_xaringan/raw/master/img/logo/ru_shield.png), url(https://raw.githubusercontent.com/jvcasillas/stats-illustrations/master/rstats-artwork/rainbowr.gif)
+background-size: 70px, 175px
 background-position: 15% 15%, 95% 0%
 
 <br>
@@ -622,23 +698,7 @@ background-position: 15% 15%, 95% 0%
 
 
 
----
 
-# Exercise I
-
-- Open RStudio
-- File > New file > RMarkdown (then click "ok")
-- Select all (cmd + a) and delete everthing
-- Type "hello world"
-- Click "knit" (You will be asked to save. Save the file to your desktop)
---
-
-- Try to add the following: 
-  - a section header
-  - bold text
-  - an ordered list
-  - an unordered list
-  - a link to your favorite website
 
 ---
 
@@ -949,13 +1009,6 @@ Commands
 ]
 
 <style>
-.title-slide {
-  background-image: url(https://github.com/jvcasillas/ru_xaringan/raw/master/img/logo/ru_shield.png), url(https://raw.githubusercontent.com/jvcasillas/stats-illustrations/master/rstats-artwork/rainbowr.gif);
-  background-position: 9% 15%, 90% 15%;
-  background-size: 55px, 125px;
-  background-color: #fff;
-  padding-left: 100px;  /* delete this for 4:3 aspect ratio */
-}
 
 .huge {
   font-size: 2.5em;

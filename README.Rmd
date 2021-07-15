@@ -1,5 +1,6 @@
 ---
 title: "Is your code ready for publication? A practical introduction to R Markdown"
+date: "Last update: `r Sys.Date()`"
 output: github_document
 ---
 
