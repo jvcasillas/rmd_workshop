@@ -5,6 +5,7 @@ author: ''
 date: 'Last update: `r Sys.time()`'
 output: html_document
 bibliography: r-references.bib
+csl: apa.csl
 ---
 
 
@@ -100,8 +101,18 @@ The model estimate for the intercept was `r mod_tib[1, 2]` &pm;`r mod_tib[1, 3]`
 Scores decreased as days without sleep increased. 
 Specifically, for each day without sleep scores decreased by `r mod_tib[2, 2]` &pm; `r mod_tib[2, 3]` standard errors (*t* = `r mod_tib[2, 4]`, p < .001). 
 
+There are also interesting helper packages that help automate reporting results in prose. 
+See [academicWriteR](https://www.jvcasillas.com/academicWriteR/) and [report](https://easystats.github.io/report/).
 
+```{r, report-ex, eval=F}
+# You probably need to install first (only once)
+if(F) {
+  install.packages("report")
+}
 
+library(report)
+report(mod)
+```
 
 
 
@@ -133,6 +144,14 @@ For example, we did our analysis in R [@R-base].
 References don't have to be parenthetical.  
 @R-papaja was used for APA formatting. 
 
+You can set the bibliography style using csl. 
+For example:
+
+```
+csl: apa.csl
+```
+
+You can find an enormous list of csl classes [here](https://github.com/citation-style-language/styles). 
 For more information about APA formatting with `papaja`, see the `example_apa.Rmd` file. 
 
 

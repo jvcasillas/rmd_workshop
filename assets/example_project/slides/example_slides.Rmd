@@ -16,6 +16,12 @@ output:
 # Slides
 
 ```{r, 'load', echo=FALSE, message=F, warning=F, fig.retina=2}
+# Note
+# You probably need to install xaringan first (only once)
+if(F) {
+  install.packages("xaringan")
+}
+
 library(tidyverse)
 library(here)
 library(knitr)
