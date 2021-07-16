@@ -1,0 +1,140 @@
+---
+title: 'Example project'
+subtitle: ''
+author: ''
+date: 'Last update: `r Sys.time()`'
+output: html_document
+bibliography: r-references.bib
+---
+
+
+```{r, echo=F, warning=F, message=F}
+library(knitr)
+library(tidyverse)
+library(here)
+library(broom)
+```
+
+## Chunks
+
+- `echo`: logical (TRUE/FALSE)
+- `eval`: logical (TRUE/FALSE)
+- `include`: logical (TRUE/FALSE)
+
+```{r, 'load-data', echo=T, message=F}
+dat <- read_csv(here("data", "simulated_data.csv"))
+```
+
+## Plots
+
+Important chunk options
+
+- `fig.retina`: numeric (1 or 2)
+- `fig.width`: numeric
+- `fig.height`: numeric
+- `fig.align`: character ('left', 'right', 'center')
+
+```{r, scatter-plot}
+dat %>% 
+  ggplot() + 
+  aes(x = days, y = score) + 
+    geom_point()
+```
+
+
+
+## Tables
+
+Important chunk options
+
+- `results`: character ('hide', 'asis')
+
+### Descriptive stats
+
+```{r, desc-tab, results='asis'}
+dat %>% 
+  summarize(n = n(), avg_score = mean(score), sd_score = sd(score)) %>% 
+  mutate_if(is.numeric, round, digits = 2) %>% 
+  kable(format = "pandoc")
+```
+
+
+
+
+### Fit a model
+
+```{r, model}
+# Score as a function of days without sleep
+mod <- lm(score ~ days, data = dat)
+
+# Model summary
+summary(mod)
+
+# Assign to tidy object for cleaner printing
+mod_tib <- tidy(mod) %>% 
+  mutate_if(is.numeric, round, digits = 2)
+```
+
+
+```{r, mod-tab1}
+mod_tib %>% 
+  kable(format = "pandoc")
+```
+
+
+```{r, mod-tab2, message=F, eval=F}
+sjPlot::tab_model(mod)
+```
+
+
+
+
+
+
+
+## Writing results
+
+We analyzed the simulated data using linear regression. 
+The outcome variable, `score` was modeled as a function of days without sleep. 
+The model estimate for the intercept was `r mod_tib[1, 2]` &pm;`r mod_tib[1, 3]` standard errors (*t* = `r mod_tib[1, 4]`, p < .001). 
+Scores decreased as days without sleep increased. 
+Specifically, for each day without sleep scores decreased by `r mod_tib[2, 2]` &pm; `r mod_tib[2, 3]` standard errors (*t* = `r mod_tib[2, 4]`, p < .001). 
+
+
+
+
+
+
+
+## Different outputs
+
+We can change the `output: ` argument of the YAML front matter. 
+Try `output: word_document` and `output: pdf_document` (if you have LaTeX installed). 
+We can also change the style of the documents using CSS (see output options). 
+
+
+
+
+
+
+
+## Ref sections
+
+You can use `.bib` files to automate reference sections. 
+
+Add this to the YAML front matter: 
+
+```
+bib: r-references.bib
+```
+
+And then cite anything in the r-references.bib file using \@ and the ref name. 
+For example, we did our analysis in R [@R-base]. 
+References don't have to be parenthetical.  
+@R-papaja was used for APA formatting. 
+
+For more information about APA formatting with `papaja`, see the `example_apa.Rmd` file. 
+
+
+
+# References

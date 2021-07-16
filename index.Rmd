@@ -41,6 +41,11 @@ class: middle
 ]
 
 ---
+count: false
+background-image: url(https://raw.githubusercontent.com/jvcasillas/media/master/rstats/memes/rstats_cult.png)
+background-size: contain
+
+---
 exclude: true
 count: false
 class: center, middle
@@ -323,6 +328,7 @@ install.packages("rmarkdown")
 install.packages("knitr")
 install.packages("tidyverse")
 install.packages("here")
+install.packages("broom")
 install.packages("tinytex")
 ```
 
@@ -355,7 +361,7 @@ background-position: 50% 50%
 - File > New file > RMarkdown (then click "ok")
 - Select all (cmd + a) and delete everything
 - Type "hello world"
-- Click "knit" (You will be asked to save. Save the file to your desktop)
+- Click "knit" (You will be asked to save. Save the file as `my_ex.Rmd` to your desktop)
 - Add the following: 
   - a section header
   - bold text
@@ -370,24 +376,15 @@ background-position: 50% 50%
 
 ### Key ideas
 
-- R Markdown files are just text files that end with **.Rmd**
+.big[
 
-- **YAML** <underline>front matter</underline> is where we set things up, i.e., `output: html_document`
+- R Markdown files are just text files that end with **.Rmd**
 
 - Markdown syntax!
 
-- Code chunks: 
-
-````
-```{r}`r ''`
-
-# R code here
-2 + 2
-
-```
-````
-
 - **knit** the Rmd file to get a specific output
+
+]
 
 ---
 exclude: true
@@ -398,10 +395,7 @@ background-color: #fd9426
 <iframe src="https://wall.sli.do/event/ba48cucz" width="1000" height="600" style="border:none;"></iframe>
 
 ---
-background-image: url(https://raw.githubusercontent.com/jvcasillas/stats-illustrations/master/rstats-artwork/r_first_then.png)
-background-size: contain
 
----
 
 
 
@@ -426,70 +420,206 @@ background-position: 95% 50%
 
 ---
 
-Exercise II - From scratch
-(yaml, text, chunks)
-
----
+# Exercise II - Anatomy of an Rmd
 
 
+.big[
 
+- Add YAML front matter to `my_ex.Rmd`
 
+- Add code chunks
 
+- Knit to html
 
-
-
-
-
-
-
-
-
-More about code chunks
-(echo, eval, include)
-
-.pull-left[
-Commands
-
-- `echo`: logical (TRUE/FALSE)
-- `eval`: logical (TRUE/FALSE)
-- `include`: logical (TRUE/FALSE)
-- `results`: character ('hide', 'asis', etc.)
-- figure options
-  - `fig.retina`: numeric (1 or 2)
-  - `fig.width`: numeric
-  - `fig.height`: numeric
-  - `fig.align`: character ('left', 'right', 'center')
 ]
 
 ---
 
-Exercise III - Play with the output
+# Exercise II - Anatomy of an Rmd
 
+### Key ideas
 
+.big[
 
+- **YAML** front matter is where we set things up, i.e., `output: html_document`
 
+- Code **chunks**: 
 
+````
+```{r, ex-chunk}`r ''`
 
+# R code here
+2 + 2
 
+```
+````
 
+- We ~~can~~ should name code chunks
 
+- We can generate different output documents according to our needs
 
+]
 
+---
+exclude: true
+count: false
+class: center, middle
+background-color: #fd9426
 
+<iframe src="https://wall.sli.do/event/ba48cucz" width="1000" height="600" style="border:none;"></iframe>
 
-
-
-
-
+---
+background-image: url(https://raw.githubusercontent.com/jvcasillas/media/master/rstats/memes/rstats_rmd.png)
+background-size: contain
 
 ---
 
-In-line code
+
+
+
+
+
+
+
+
+
+
+class: title-slide-section-red, middle
+background-image: url(./assets/img/chunky_monkey.png)
+background-size: 350px
+background-position: 95% 50%
+
+# Exercise III <br>More about chunks
+
+<!--
+(echo, eval, include)
+-->
+
+---
+
+# Exercise III - More about chunks
+
+### Chunk options
+
+.big[
+
+- `echo`: logical (TRUE/FALSE)
+- `eval`: logical (TRUE/FALSE)
+- `include`: logical (TRUE/FALSE)
+
+]
+
+---
+
+# Exercise III - More about chunks
+
+### Key ideas
+
+.big[
+
+- Code chunks have (many!) options
+
+- We can take advantage of them to show/hide/evaluate/include R code
+
+- Arguments are separated by commas 
+
+]
+
+---
+exclude: true
+count: false
+class: center, middle
+background-color: #fd9426
+
+<iframe src="https://wall.sli.do/event/ba48cucz" width="1000" height="600" style="border:none;"></iframe>
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class: title-slide-section-red, middle
+background-image: url(https://media.tenor.com/images/6beac3b4d75a09f9df7ad46458a9c5bb/tenor.gif)
+background-size: 350px
+background-position: 90% 50%
+
+# Exercise IV - In-line code
+
+<!--
 (calculator math, objects)
+-->
 
 ---
 
-Exercise IV - Writing results
+# Exercise IV - In-line code
+
+.big[
+
+- In-line calculations
+
+- Printings objects
+
+- Reporting results 
+
+]
+
+---
+
+# Exercise IV - In-line code
+
+### Key ideas
+
+.pull-left[
+.big[
+
+- We can use the power of the R console in prose
+
+- Two plus two = `r 2 + 2`
+
+```{r, in-line-ex-1, eval=F}
+Two plus two = `r 2 + 2`
+```
+
+- We can calculate summary statistics: The mean mpg is `r mean(mtcars$mpg)`
+
+```{r, in-line-ex-2, eval=F}
+The mean mpg is `r mean(mtcars$mpg)`
+```
+
+]
+]
+
+.pull-right[
+.big[
+
+- We can print most R objects: The mean mpg is `r mean(mtcars$mpg)`
+
+```{r, in-lin-ex-3, eval=F}
+the_mean <- mean(mtcars$mpg)
+
+The mean mpg is `r the_mean`
+```
+
+]
+]
+
+---
+exclude: true
+count: false
+class: center, middle
+background-color: #fd9426
+
+<iframe src="https://wall.sli.do/event/ba48cucz" width="1000" height="600" style="border:none;"></iframe>
 
 ---
 
@@ -504,19 +634,54 @@ Exercise IV - Writing results
 
 
 
-
+background-image: url(https://raw.githubusercontent.com/jvcasillas/stats-illustrations/master/rstats-artwork/r_first_then.png)
+background-size: contain
 
 ---
+
+
+
+
+
+
+
+
+# What's next?
+
+### Publishing
+
+.big[
+
+- Plots and tables
+
+- Writing results
+
+- Different outputs
+
+- References
+
+- APA format with `papaja`
+
+]
+
+.footnote[
+For these exercises we will use a `example_project`  
+Available here: 
+]
+
+---
+exclude: true
 background-image: url(https://raw.githubusercontent.com/jvcasillas/stats-illustrations/master/rstats-artwork/presenting_monster.png)
 background-size: contain
 background-position: 50% 50%
 
 ---
+exclude: true
 background-image: url(https://raw.githubusercontent.com/tidyverse/ggplot2/master/man/figures/logo.png)
 background-size: 225px
 background-position: 95% 15%
 
-# Plots and tables
+# Exercise V - Plots and tables
 
 <!--
 (fig chunk options, results="asis")
@@ -537,50 +702,32 @@ background-position: 95% 15%
 
 ]
 
----
-
-Exercise V
-(change plot width, retina, automate plots)
-
----
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-Publishing
-
-- different outputs
-- formatting
-- references
+.footnote[
+For these exercises we will use a `example_project`  
+Available here: 
+]
 
 ---
+exclude: true
 
+# Publishing
 
+.big[
 
+- Different outputs
 
+- Formatting
 
+- References
 
+- APA format with `papaja`
 
+]
 
-
-
-
-
-
-Efficiency
-
-- cache
-- saving large objects
+.footnote[
+For these exercises we will use a `example_project`  
+Available here: 
+]
 
 ---
 
@@ -591,12 +738,11 @@ Efficiency
 
 
 
-Extra
 
-- html slides
-- websites/blogs
 
----
+
+
+
 class: middle
 background-image: url(./assets/img/rmd_01.png)
 background-size: contain
@@ -612,42 +758,44 @@ converted to many differnt output formats
 - Word
 - HTML5 slides
 - websites/blogs
-- .grey[Beamer]
-- .grey[Tufte handouts]
-- .grey[Books]
-- .grey[dashboards]
+- Beamer
+- Tufte handouts
+- Books
+- dashboards
 
 ]
 ]
 
 ---
-
-
-
-
-
-
-
-
-Common mistakes
-
-- not restarting session regularly (It worked before and now I get an error)
-(what happens when you knit? new R session > set working directory to location of Rmd file >executes code chunks in order
+count: false
+background-image: url(https://raw.githubusercontent.com/jvcasillas/media/master/rstats/memes/os_heartbreak.png)
+background-size: contain
 
 ---
-
-
-More resources
-
-- Links
-
-
-
----
+count: false
 background-image: url(https://raw.githubusercontent.com/jvcasillas/stats-illustrations/master/rstats-artwork/r_rollercoaster.png)
 background-size: contain
 
 ---
+
+# More resources
+
+.big[
+
+- [Reproducible reports with RMarkdown](https://rmarkdown-shilaan.netlify.app/)
+
+- [Boost Your R Markdown Skills](https://raukr-boost-rmd-skills.netlify.app/#1)
+
+- [R Markdown for scientists](https://rmd4sci.njtierney.com)
+
+- [All the chunk options!](https://yihui.org/knitr/options/)
+
+- [All about papaja](http://frederikaust.com/papaja_man/)
+
+]
+
+---
+count: false
 background-image: url(https://www.r-project.org/Rlogo.png), url(./assets/img/prohibited.png), url(https://www.mcdwayne.com/wp-content/uploads/2018/05/I-love-markdown-syntax-language.png)
 background-size: 200px, 350px, contain
 background-position: 0% 80%, 66% 26%, 60% 60%
@@ -699,129 +847,33 @@ background-position: 15% 15%, 95% 0%
 
 
 
+count: false
+
+# More tips and tricks
+
+### Efficiency
+
+- For costly computations, large object, etc., it is a good idea to cache
+  - the option is `cache=TRUE`
+  - knitr won't rerun the chunk unless it is changed
+- Saving large objects
+  - instead of refitting slow models every time you knit your document you can run the model once and save the output to an rds file
+  - use `saveRDS(model_object, PATH_WHERE_YOU_WANT_IT)`
+  - see `example_project` [here]() for a concrete example
+
+### Common mistakes
+
+- not restarting session regularly (It worked before and now I get an error)
+(what happens when you knit? new R session > set working directory to location of Rmd file >executes code chunks in order
 
 ---
-
-# Exercise II 
-
-- Open RStudio
-- File > New file > RMarkdown (then click "ok")
-- Take a look at the text. What markup do you see?
-- Click "knit" (You will be asked to save. Save the file to your desktop)
-- What do you see? What section represents the `front matter`? How can you distinguish plain markdown text from r code?
---
-
-- Create a new `knitr` code chunk, add the following and click `knit`:  
-`x <- 5; 2 * x`
---
-
-- Create a new `knitr` code chunk and add the following (note: you may have to install the package):  
-
-.pull-left[
-```
-library(tidyverse)
-mtcars %>% 
-  ggplot(aes(x = drat, y = mpg)) + 
-    geom_point() + 
-    geom_smooth()
-```
-]
-
---
-
-.pull-right[
-```{r, echo=F, cache=F, warning=F, message=F, fig.retina=2, fig.height=3.5}
-library(tidyverse)
-mtcars %>% 
-  ggplot(aes(x = drat, y = mpg)) + 
-    geom_point() + 
-    geom_smooth()
-```
-]
-
----
-
-# Exercise III
-
-- Open the github desktop app
-- You should still have the `github_practice` repo
-- Pull in the newest changes (click 'pull')
-- **If you don't have the `github_practice` repo, go to github.com, 
-search for `jvcasillas`, search for the `github_practice` repo, 
-fork it again, and clone it to your desktop**. 
---
-
-- Open the `rmarkdown_ex` folder and double click "rmarkdown_ex.Rproj"
---
-
-- Find the "Files" tab in one of the 4 window panes, click on `ex3.Rmd` 
-- Inspect the file, notice the front matter and the code chunks. 
-- Click 'knit'
---
-
-- Change the front matter from what you see on the left to what you see on 
-the right and click `knit`:  
-
-.pull-left[
-```{r, eval=F}
----
-title: "More complex RMardown example"
-author: "Joseph Casillas"
-date: "`r Sys.Date()`"
-output: 
-  html_document: 
-    highlight: kate
-    number_sections: yes
-    theme: spacelab
-    toc: true
-    toc_float:
-      toc_collapsed: true
----
-```
-]
-
-.pull-right[
-```{r, eval=F}
----
-title: "More complex RMardown example"
-author: "Joseph Casillas"
-date: "`r Sys.Date()`"
-output: word_document
----
-```
-]
-
----
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+count: false
 class: title-slide-section-grey, middle
 
 # Writing reproducible scientific reports with papaja
 
 ---
-
+count: false
 # papaja
 
 ### Overview
@@ -839,6 +891,7 @@ only .docx (word) files (i.e., SSLA)
 - If you ~~hate~~ dislike word this is annoying
 
 ---
+count: false
 
 # papaja
 
@@ -858,6 +911,7 @@ so you can 'just write'
 reproducible reports
 
 ---
+count: false
 
 # papaja
 
@@ -871,6 +925,7 @@ reproducible reports
 - Pre-prints
 
 --
+count: false
 
 ### How does it work?
 
@@ -880,11 +935,13 @@ reproducible reports
 - If you know RMarkdown, you know papaja
 
 ---
+count: false
 class: title-slide-section-grey, middle
 
 # A simple example
 
 ---
+count: false
 background-image: url(./assets/img/papaja_1.png)
 background-size: 400px
 background-position: 99% 50%
@@ -938,15 +995,17 @@ output            : papaja::apa6_word
 
 
 ---
+count: false
 class: title-slide-section-grey, middle
 
 # An advanced example
 
 ---
+count: false
 
 # Child and parent documents
 
-- Go to https://github.com/jvcasillas/dpbe_l2_replication
+- Go to https://osf.io/cp9bs/
 
 - Inspect the `docs` folder, then the `manuscript` folder
 
@@ -973,8 +1032,9 @@ different from what we have already seen?
 - useful when distractions are an issue
 
 ---
+count: false
 
-# Exercise II
+# Exercise
 
 ### knitr
 

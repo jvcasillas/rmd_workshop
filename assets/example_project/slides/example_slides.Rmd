@@ -1,0 +1,32 @@
+---
+title: 'Example slides'
+subtitle: ''
+author: ''
+date: '`r Sys.Date()`'
+output: 
+  xaringan::moon_reader:
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: "16:9"
+---
+
+# Slides
+
+```{r, 'load', echo=FALSE, message=F, warning=F, fig.retina=2}
+library(tidyverse)
+library(here)
+library(knitr)
+
+dat <- read_csv(here("data", "simulated_data.csv"))
+```
+
+```{r, plot, fig.height=5, fig.width=7, fig.retina=2}
+dat %>% 
+  ggplot(., aes(x = days, y = score)) + 
+    geom_point() + 
+    geom_smooth(method = lm, formula = "y ~ x") + 
+    theme_test()
+```
