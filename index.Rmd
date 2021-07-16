@@ -666,7 +666,7 @@ background-size: contain
 
 .footnote[
 For these exercises we will use a `example_project`  
-Available here: 
+Available here: https://www.jvcasillas.com/rmd_workshop/assets/example_project.zip
 ]
 
 ---
@@ -704,7 +704,7 @@ background-position: 95% 15%
 
 .footnote[
 For these exercises we will use a `example_project`  
-Available here: 
+Available here: https://www.jvcasillas.com/rmd_workshop/assets/example_project.zip
 ]
 
 ---
@@ -726,7 +726,7 @@ exclude: true
 
 .footnote[
 For these exercises we will use a `example_project`  
-Available here: 
+Available here: https://www.jvcasillas.com/rmd_workshop/assets/example_project.zip
 ]
 
 ---
@@ -859,12 +859,15 @@ count: false
 - Saving large objects
   - instead of refitting slow models every time you knit your document you can run the model once and save the output to an rds file
   - use `saveRDS(model_object, PATH_WHERE_YOU_WANT_IT)`
-  - see `example_project` [here]() for a concrete example
+  - see `example_project` [here](https://github.com/jvcasillas/rmd_workshop/blob/master/assets/example_project.zip?raw=true) for a concrete example
 
 ### Common mistakes
 
-- not restarting session regularly (It worked before and now I get an error)
-(what happens when you knit? new R session > set working directory to location of Rmd file >executes code chunks in order
+- "It worked before and now I get an error!"
+  - Happens often when you do not restart your R session regularly
+  - Why? What happens when you knit?  
+  new R session > set working directory to location of Rmd file > execute code chunks in order
+  - Pro tip: change RStudio default settings to not save sessions and not restore from Rdata (Preferences > General, under `Workspace` and `History`)
 
 ---
 count: false
